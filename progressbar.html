@@ -1,0 +1,33 @@
+<html>
+<head>
+<title> Progress Bar </title>
+</head>
+<body>
+<h1> Progress Bar</h1>
+<canvas id="bar" width="98px" height="20px" style="border:1px solid black; padding-right:0px;">
+</canvas> 
+<br>
+<br>
+<button onclick="fillBar()"> Start Progress </button>
+<br>
+<button onclick="stopBar()"> Stop Progress </button>
+<script>
+	var canvas = document.getElementById("bar");
+	var ctx = canvas.getContext("2d");
+	var x = 0;
+	ctx.fillStyle = "green";
+	var progress;
+	function fillBar() 
+	{
+		progress = setInterval(function(){ctx.fillRect(0, 0, x, 100); x++; if (x == 100){clearInterval(progress); alert('Finished!');}}, 50);
+	}
+	function stopBar()
+	{
+		clearInterval(progress);
+	}
+	
+
+</script>
+</body>
+
+</html>
