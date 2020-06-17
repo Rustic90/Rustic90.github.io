@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Battleship</title>
+</head>
+<body>
+    <h1> Mini Battleship </h1>
+    <p> There is one ship randomly hiding in the 2d array below. Fire away!</p>
+    <p>*Hint: The console will reveal the answer without clicking anything*</p>
+    <script>
+        // Creates a class for the game board
+        class board{
+            constructor()
+            {
+                this.coords = [
+                    ["-", "-", "-"],
+                    ["-", "-", "-"],
+                    ["-", "-", "-"]
+                ];
+            }
+        }
+        var board1 = new board();
+        var randomX;
+        var randomY;
+        function startGame(){
+            for (i=0; i<board1.coords.length; i++)
+            {
+                document.write(`<button onclick="fireShot(${i}, 0)">${board1.coords[i][0]}</button>`);
+                document.write(`<button onclick="fireShot(${i}, 1)">${board1.coords[i][1]}</button>`);
+                document.write(`<button onclick="fireShot(${i}, 2)">${board1.coords[i][2]}</button>`);
+                document.write("<br>");
+            }
+            randomX = Math.floor(Math.random()*3);
+            randomY = Math.floor(Math.random()*3);
+            board1.coords[randomX][randomY] = "x";
+            console.log(board1.coords);
+        }
+
+        function fireShot(x, y)
+        {
+            if (board1.coords[x][y] == "x")
+            {
+                alert("Hit!");
+                document.getElementById("log").innerHTML += `Hit! The ship was located at [${randomX}] [${randomY}]`;
+
+            }
+            else 
+            {
+                document.getElementById("log").innerHTML += "Miss" + "<br>";
+            }
+            
+        }
+        startGame();
+    </script>
+    <p id="log"></p>
+</body>
+</html>
