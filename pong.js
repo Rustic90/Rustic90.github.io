@@ -23,7 +23,7 @@ class paddle {
         this.y = Y; 
         this.width = 10;
         this.height = 100;
-        this.velocity = 1.9;
+        this.velocity = 2.0;
     }
 }
 
@@ -38,11 +38,11 @@ function physics() {
     paddle2.y += paddle2.velocity;
     if (paddle2.y + paddle2.height >= 500)
     {
-        paddle2.velocity = -1.9;
+        paddle2.velocity = -2.0;
     }
     else if (paddle2.y <= 0)
     {
-        paddle2.velocity = 1.9;
+        paddle2.velocity = 2.0;
     }
 
     ball1.x += ball1.velocityX;
