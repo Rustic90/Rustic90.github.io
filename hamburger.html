@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hamburger Menu</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        nav {
+            width: 70%;
+            height: 50px;
+            background-color: skyblue;
+            padding: 10px;
+            
+        }
+        #nav-left {
+            float: left;
+        }
+        #nav-right {
+            float: right;
+            font-size: 1.2em;
+            transform: rotate(90deg);
+        }
+        #burger-icon:hover {
+            cursor: pointer;
+        }
+        #links {
+            width: 70%;
+            height: 120px;
+            border: 1px solid black;
+            display: none;
+            background-color: #eee;
+        }
+        li {
+            list-style-type: none;
+            padding-top: 5px;
+        }
+        h2 {
+          margin: 0;  
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div id="nav-left">
+            <h2>Navigation</h2>
+        </div>
+        <div id="nav-right">
+            <h2 id="burger-icon" onclick="toggleNav()">|||</h2>
+        </div>
+    </nav>
+    <div id="links">
+        <ul>
+            <li><a href="#"> Home </a></li>
+            <li><a href="#"> About </a></li>
+            <li><a href="#"> FAQ </a></li>
+            <li><a href="#"> Contact </a></li>
+        </ul>
+    </div>
+    <script>
+        function toggleNav()
+        {
+            $("#links").slideToggle();
+        }
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</body>
+</html>
